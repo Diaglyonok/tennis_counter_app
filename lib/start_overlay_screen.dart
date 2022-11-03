@@ -160,10 +160,8 @@ class _TextFieldItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
               hintText: 'Name Surname',
-              hintStyle: Theme.of(context)
-                  .textTheme
-                  .subtitle1!
-                  .copyWith(color: Theme.of(context).colorScheme.onSurface.withOpacity(0.3)),
+              hintStyle: Theme.of(context).textTheme.subtitle1!.copyWith(
+                  fontSize: 14, color: Theme.of(context).colorScheme.onSurface.withOpacity(0.3)),
             ),
             onChanged: (_) => onChanged(),
             textAlignVertical: TextAlignVertical.center,
