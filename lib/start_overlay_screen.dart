@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:tennis_counter_app/player_widget.dart';
 
 bool _isNameValid(String name) {
@@ -136,15 +137,25 @@ class _TextFieldItem extends StatelessWidget {
               nextNode?.requestFocus();
             },
             controller: controller,
+            inputFormatters: [
+              TextInputFormatter.withFunction(
+                (oldValue, newValue) => newValue.copyWith(
+                  text: newValue.text.toUpperCase(),
+                ),
+              )
+            ],
             decoration: InputDecoration(
               isDense: true,
-              enabledBorder:
-                  !node.hasFocus && controller.text.isNotEmpty && !_isNameValid(controller.text)
-                      ? OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.red),
-                          borderRadius: BorderRadius.circular(8),
-                        )
-                      : null,
+              enabledBorder: node.hasFocus || controller.text.isEmpty
+                  ? null
+                  : OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: !_isNameValid(controller.text)
+                            ? Theme.of(context).colorScheme.error
+                            : Colors.green,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
