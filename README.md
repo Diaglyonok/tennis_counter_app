@@ -1,16 +1,15 @@
-# tennis_counter_app
+# Tennis Counter App
 
-A new Flutter project.
+Flutter Project was created for learning purposes, used MobX State Management Pattern, Created simple application.
 
-## Getting Started
+Project was tested at MacOS, Android, iOS, Web.
 
-This project is a starting point for a Flutter application.
+## Screenshots
 
-A few resources to get you started if this is your first Flutter project:
+Adding Players Screen
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<img width="402" alt="image" src="https://user-images.githubusercontent.com/18545029/199596494-2b6019c5-8e08-4511-b6ee-dd80b7df80a7.png">
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Tennis sets tracking process
+
+<img width="402" alt="image" src="https://user-images.githubusercontent.com/18545029/199596734-2e78a803-f239-45d0-86d0-f9c7bccba0b6.png">
