@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx/mobx.dart';
-import 'package:tennis_counter_app/player_widget.dart';
-import 'package:tennis_counter_app/start_overlay_screen.dart';
 import 'package:tennis_counter_app/store/game_store.dart';
+import 'package:tennis_counter_app/ui/player_widget.dart';
+import 'package:tennis_counter_app/ui/start_overlay_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -69,11 +69,19 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text("Tennis Tracker"),
         actions: [
-          IconButton(
-              onPressed: () {
-                store.removePlayers();
-              },
-              icon: const Icon(Icons.person_off))
+          Observer(
+            builder: (context) {
+              if (store.player1 != null && store.player2 != null) {
+                return IconButton(
+                    onPressed: () {
+                      store.removePlayers();
+                    },
+                    icon: const Icon(Icons.person_off));
+              }
+
+              return Container();
+            },
+          ),
         ],
       ),
       body: Stack(

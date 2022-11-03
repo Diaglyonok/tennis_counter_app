@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tennis_counter_app/player_widget.dart';
+import 'package:tennis_counter_app/ui/player_widget.dart';
 
 bool _isNameValid(String name) {
   if (name.isEmpty) {
@@ -161,7 +161,9 @@ class _TextFieldItem extends StatelessWidget {
               ),
               hintText: 'Name Surname',
               hintStyle: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  fontSize: 14, color: Theme.of(context).colorScheme.onSurface.withOpacity(0.3)),
+                    fontSize: 14,
+                    color: Theme.of(context).colorScheme.onSurface.withOpacity(0.3),
+                  ),
             ),
             onChanged: (_) => onChanged(),
             textAlignVertical: TextAlignVertical.center,
